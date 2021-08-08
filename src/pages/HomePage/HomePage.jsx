@@ -2,9 +2,9 @@
 // ->lifecycle methods
 import React, { Component } from "react";
 import products from "../../utils/products.json";
-import "../HomePage/HomePage.scss";
 import MenuItem from "../../components/MenuItem/MenuItem";
 import "../../components/MenuList/MenuList.scss";
+import { HomePageContainer } from "./HomePageStyles";
 
 export class HomePage extends Component {
   constructor() {
@@ -31,7 +31,7 @@ export class HomePage extends Component {
     // preiau din state datele despre categorii si se va mapa prin array cu metoda map() pentru afisare
     const { categories } = this.state;
     return (
-      <div className="homepage">
+      <HomePageContainer>
         <div className="directory-menu">
           {/* datele despre categori se afla in state*/}
           {categories.map((category, index) => {
@@ -47,7 +47,7 @@ export class HomePage extends Component {
             );
           })}
         </div>
-      </div>
+      </HomePageContainer>
     );
   }
 }
