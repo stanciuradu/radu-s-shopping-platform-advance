@@ -1,24 +1,28 @@
 import React from "react";
-import "../ChechoutItem/CheckoutItem.scss";
+// import "../ChechoutItem/CheckoutItem.scss";
 import { connect } from "react-redux";
 import { removeFromCart } from "../../redux/cart/cartActions";
+import { ChechoutItemContainer, ImageContainer, Image, NameChechkoutItem, PriceChechkoutItem, RemoveButtonChechkoutItem } from "./CheckoutItemStyles";
 function CheckoutItem(props) {
-  const {
-    name,
-    imageUrl,
-    price,
-    currency,
-    removeFromCartWithDispatch,
-  } = props;
+  const { name, imageUrl, price, currency, removeFromCartWithDispatch } = props;
   return (
-    <div className="checkout-item">
-      <div className="image-container">
-        <img src={imageUrl} alt="item" />
-      </div>
-      <span className="name">{name}</span>
-      <span className="price">{price + currency}</span>
-      <div className="remove-button" onClick={()=>removeFromCartWithDispatch()}>&#10005;</div>
-    </div>
+    <ChechoutItemContainer>
+      <ImageContainer>
+        <Image src={imageUrl} alt="item" />
+      </ImageContainer>
+      <NameChechkoutItem>
+        <div>{name}</div>
+      </NameChechkoutItem>
+      <PriceChechkoutItem>
+        <div>{price + currency}</div>
+      </PriceChechkoutItem>
+      <RemoveButtonChechkoutItem
+        className="remove-button"
+        onClick={() => removeFromCartWithDispatch()}
+      >
+        &#10005;
+      </RemoveButtonChechkoutItem>
+    </ChechoutItemContainer>
   );
 }
 function mapDispatchToProps(dispatch) {

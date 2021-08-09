@@ -1,18 +1,21 @@
 // este o componenta simpla care reprezinta iconita de cart->svg la care se adauga nr de produse din cart
 import React from "react";
-import "../../components/CartIcon/CartIcon.scss";
+// import "../../components/CartIcon/CartIcon.scss";
 import { toggleCartHidden } from "../../redux/cart/cartActions";
 import { connect } from "react-redux";
 import { ReactComponent as ShoppingBag } from "../../assets/icons/shopping-bag.svg";
+import { CartIconContainer, ItemCount } from "./CartIconStyles";
 
 function CartIcon(props) {
   const { toggleCartWithDispatch, numberOfProducts } = props;
   console.log(props);
   return (
-    <div className="cart-icon" onClick={toggleCartWithDispatch}>
-      <ShoppingBag className="shopping-icon" />
-      <span className="item-count">{numberOfProducts}</span>
-    </div>
+    <CartIconContainer onClick={toggleCartWithDispatch}>
+      <ShoppingBag />
+      <ItemCount>
+        <div>{numberOfProducts} </div>
+      </ItemCount>
+    </CartIconContainer>
   );
 }
 

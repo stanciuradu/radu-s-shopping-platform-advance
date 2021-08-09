@@ -1,14 +1,12 @@
 // ButtonSubmit este o componenta simpla reutilizabilă
 import React from "react";
-import "../../components/ButtonSubmit/ButtonSubmit.scss";
-
+// import "../../components/ButtonSubmit/ButtonSubmit.scss";
+import { ButtonSubmitContainer } from "./ButtonSubmitStyles";
 function ButtonSubmit(props) {
-  const { children,inverted, ...otherProps } = props;
+  const { children, ...otherProps } = props;
   return (
     <div>
-      <button type="button" className={`${inverted?'inverted':''}custom-button`} {...otherProps}>
-        {children}
-      </button>
+      <ButtonSubmitContainer {...otherProps}>{children}</ButtonSubmitContainer>
     </div>
   );
 }
