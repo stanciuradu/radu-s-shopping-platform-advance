@@ -25,6 +25,7 @@ export const ButtonSubmitContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
   ${getButtonStyles}
   .link {
     text-decoration: none;
