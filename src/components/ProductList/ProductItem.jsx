@@ -1,19 +1,32 @@
 import React from "react";
-import "../ProductList/ProductItem.scss";
+// import "../ProductList/ProductItem.scss";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/cart/cartActions";
+import {
+  ProductItemContainer,
+  ProductItemImage,
+  ProductItemDetailsContainer,
+  ProductItemName,
+  ProductItemPrice,
+} from "./ProductItemStyles";
 
 function ProductItem(props) {
   const { name, imageUrl, price, currency, addToCartWithDispatch } = props;
   return (
-    <div className="product-item">
-      <img src={imageUrl} alt="random" className="image" />
-      <div className="product-item-details">
-        <span className="name">{name}</span>
-        <span className="price">{price}</span>
+    <ProductItemContainer>
+      <ProductItemImage>
+        <img src={imageUrl} alt="random" />
+      </ProductItemImage>
+      <ProductItemDetailsContainer>
+        <span className="name">
+          <ProductItemName>{name}</ProductItemName>
+        </span>
+        <span className="price">
+          <ProductItemPrice>{price}</ProductItemPrice>
+        </span>
         <span className="currency">{currency}</span>
-      </div>
+      </ProductItemDetailsContainer>
       <ButtonSubmit
         onClick={() =>
           addToCartWithDispatch({
@@ -26,7 +39,7 @@ function ProductItem(props) {
       >
         Add to Cart
       </ButtonSubmit>
-    </div>
+    </ProductItemContainer>
   );
 }
 function mapDispatchToProps(dispatch) {
