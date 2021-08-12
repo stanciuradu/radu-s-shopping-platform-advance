@@ -15,4 +15,4 @@ export const CollectionPreviewTitle = styled.div`
 export const PreviemCollectionContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`
+`;

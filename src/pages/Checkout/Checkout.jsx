@@ -1,8 +1,18 @@
 import React from "react";
-import "../Checkout/Checkout.scss";
+// import "../Checkout/Checkout.scss";
 import { connect } from "react-redux";
 import CheckoutItem from "../../components/ChechoutItem/CheckoutItem";
 import StripeButton from "../../components/StripeButton/StripeButton";
+import {
+  CheckoutPageContainer,
+  CheckoutHeaderContainer,
+  CheckoutHeaderBlockContainer,
+  Product,
+  Description,
+  Price,
+  Remove,
+  TotalCost,
+} from "./CheckoutStyles";
 
 function Checkout(props) {
   const { products } = props;
@@ -13,14 +23,22 @@ function Checkout(props) {
   }
 
   return (
-    <div className="checkout-page">
-      <div className="checkout-header">
-        <div className="header-block">
-          <span className="product">Product</span>
-          <span className="description">Description</span>
-          <span className="price">Price</span>
-          <span className="remove">Remove</span>
-        </div>
+    <CheckoutPageContainer>
+      <CheckoutHeaderContainer>
+        <CheckoutHeaderBlockContainer>
+          <Product>
+            <div>Product</div>
+          </Product>
+          <Description>
+            <div>Description</div>
+          </Description>
+          <Price>
+            <div>Price</div>
+          </Price>
+          <Remove>
+            <div>Remove</div>
+          </Remove>
+        </CheckoutHeaderBlockContainer>
         {products.map((product, index) => {
           return (
             <CheckoutItem
@@ -32,12 +50,14 @@ function Checkout(props) {
             />
           );
         })}
-      </div>
-      <div className="total">
-        <span>Total:{totalSum(products)}€</span>
-      </div>
+      </CheckoutHeaderContainer>
+      <TotalCost>
+        <span>
+          <div>Total:{totalSum(products)}€</div>
+        </span>
+      </TotalCost>
       <StripeButton price={totalSum} />
-    </div>
+    </CheckoutPageContainer>
   );
 }
 function mapStateToProps(state) {
