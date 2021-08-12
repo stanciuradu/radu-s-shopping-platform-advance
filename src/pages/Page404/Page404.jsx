@@ -1,11 +1,11 @@
 import React from "react";
-import "../Page404/Page404.scss";
+import { Page404Container } from "./Page404Styles";
 
 function Page404() {
   return (
-    <div className="page-404">
+    <Page404Container>
       <h1>Error 404-Page not found</h1>
-    </div>
+    </Page404Container>
   );
 }
 
