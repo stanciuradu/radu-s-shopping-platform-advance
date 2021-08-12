@@ -1,12 +1,11 @@
 import React from "react";
 import ProductItem from "./ProductItem";
-// import '../ProductList/ProductList.scss';
-import { ProductListRow } from "./ProductListStyles";
+import '../ProductList/ProductList.scss';
 function ProductList(props) {
   const { products } = props;
   return (
     <div className="product-list">
-      <ProductListRow>
+      <div className="row">
         {products
           ? products.map((product, index) => {
               return (
@@ -20,7 +19,7 @@ function ProductList(props) {
               );
             })
           : null}
-      </ProductListRow>
+      </div>
     </div>
   );
 }
