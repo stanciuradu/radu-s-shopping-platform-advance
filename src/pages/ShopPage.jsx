@@ -8,6 +8,7 @@ export class ShopPage extends Component {
     this.state = {
       // array-ul pentru produse este gol initial pana ce datele vin de la back-end
       products: [],
+      // starea initiala a componentei WithSpinner este true, deci se incarca
     };
   }
   // fac request asincron pentru a prelua datele din json
