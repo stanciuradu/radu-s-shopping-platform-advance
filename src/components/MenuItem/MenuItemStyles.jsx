@@ -1,4 +1,6 @@
-.menu-item {
+import styled from "styled-components";
+
+export const MenuItemContainer = styled.div`
   min-width: 30%;
   height: 290px;
   flex: 1 1 auto;
@@ -36,37 +38,38 @@
     margin-left: 7.5px;
     // height: 20rem;
   }
-  // in clasa content, content fiind parintele se includ stilurile prntru ceilalti doi copii-title si subtitle i clasei content
-  .background-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-  }
-  .content {
-    height: 90px;
-    padding: 0 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    background-color: white;
-    // proprietatea opacity de CSS indica transparenta div-ului de content
-    opacity: 0.7;
-    // position:absolute pentru ca, div-ul cu content sa fie plasat pe centrul componentei menu-item
-    position: absolute;
+`;
 
-    .title {
-      font-weight: bold;
-      margin-bottom: 6px;
-      font-size: 22px;
-      color: #4a4a4a;
-    }
+export const BackgroundImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+`;
 
-    .subtitle {
-      font-weight: lighter;
-      font-size: 16px;
-    }
-  }
-}
+export const ContentContainer = styled.div`
+  height: 90px;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: white;
+  // proprietatea opacity de CSS indica transparenta div-ului de content
+  opacity: 0.7;
+  // position:absolute pentru ca, div-ul cu content sa fie plasat pe centrul componentei menu-item
+  position: absolute;
+`;
+
+export const TitleContainer = styled.div`
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 22px;
+  color: #4a4a4a;
+`;
+
+export const SubtitleContainer = styled.span`
+  font-weight: lighter;
+  font-size: 16px;
+`;
