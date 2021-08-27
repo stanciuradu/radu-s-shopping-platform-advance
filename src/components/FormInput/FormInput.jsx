@@ -1,5 +1,4 @@
 import React from "react";
-import "../FormInput/FormInput.scss";
 import {
   GroupContainer,
   InputContainer,
