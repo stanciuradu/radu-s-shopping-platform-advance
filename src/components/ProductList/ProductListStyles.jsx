@@ -5,3 +5,5 @@ export const ProductListRow = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
 `;
+
+export const ProductListStyles = styled.div``;

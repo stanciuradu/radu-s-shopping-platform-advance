@@ -1,11 +1,11 @@
 import React from "react";
 import ProductItem from "./ProductItem";
-import '../ProductList/ProductList.scss';
+import { ProductListStyles, ProductListRow } from "./ProductListStyles";
 function ProductList(props) {
   const { products } = props;
   return (
-    <div className="product-list">
-      <div className="row">
+    <ProductListStyles>
+      <ProductListRow>
         {products
           ? products.map((product, index) => {
               return (
@@ -19,8 +19,8 @@ function ProductList(props) {
               );
             })
           : null}
-      </div>
-    </div>
+      </ProductListRow>
+    </ProductListStyles>
   );
 }
 
