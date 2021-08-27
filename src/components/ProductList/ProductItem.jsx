@@ -1,29 +1,19 @@
 import React from "react";
-// import "../ProductList/ProductItem.scss";
+import "../ProductList/ProductItem.scss";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/cart/cartActions";
-import {
-  ProductItemContainer,
-  ProductItemDetailsContainer,
-  ProductItemName,
-  ProductItemPrice,
-} from "./ProductItemStyles";
 
 function ProductItem(props) {
   const { name, imageUrl, price, currency, addToCartWithDispatch } = props;
   return (
-    <ProductItemContainer>
+    <div className="product-item">
       <img src={imageUrl} alt="random" className="image" />
-      <ProductItemDetailsContainer>
-        <ProductItemName>
-          <div>{name}</div>
-        </ProductItemName>
-        <ProductItemPrice>
-          <div>{price}</div>
-        </ProductItemPrice>
+      <div className="product-item-details">
+        <span className="name">{name}</span>
+        <span className="price">{price}</span>
         <span className="currency">{currency}</span>
-      </ProductItemDetailsContainer>
+      </div>
       <ButtonSubmit
         onClick={() =>
           addToCartWithDispatch({
@@ -36,7 +26,7 @@ function ProductItem(props) {
       >
         Add to Cart
       </ButtonSubmit>
-    </ProductItemContainer>
+    </div>
   );
 }
 function mapDispatchToProps(dispatch) {
