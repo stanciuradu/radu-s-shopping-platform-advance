@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import "../SignIn/SignIn.scss";
 import FormInput from "../FormInput/FormInput";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 // import functia de autentificare cu Google
 import { signInWithGoogle } from "../../apis/firebase";
 import { useHistory } from "react-router";
+import { SignInContainer, SignInDetailsContainer, ButtonSubmitStyles} from "./SignInStyles";
 function SignIn() {
   let history = useHistory();
+  
+  // initial state-ul pentru emai si password este gol
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,11 +28,11 @@ function SignIn() {
   }
   return (
     <div>
-      <div className="sign-in">
-        <div className="sign-in-details">
+      <SignInContainer>
+        <SignInDetailsContainer>
           <h4>I have already personal account</h4>
           <span>SignIn with your email and password</span>
-        </div>
+        </SignInDetailsContainer>
         <form onSubmit={(event) => handleSubmit(event)}>
           {/* actuaziez inputului cu, componenta FormInput care are style-ul pregatit */}
           <FormInput
@@ -50,7 +52,7 @@ function SignIn() {
             handleChange={(event) => setPassword(event.target.value)}
             require
           />
-          <div className="button-submit">
+          <ButtonSubmitStyles>
             <ButtonSubmit type="submit">Sign In</ButtonSubmit>
             {/* atasez la butonul de submit eventul onClick cu functia importata */}
             <ButtonSubmit
@@ -59,9 +61,9 @@ function SignIn() {
             >
               Sign In with Google
             </ButtonSubmit>
-          </div>
+          </ButtonSubmitStyles>
         </form>
-      </div>
+      </SignInContainer>
     </div>
   );
 }

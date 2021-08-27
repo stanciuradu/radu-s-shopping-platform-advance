@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import FormInput from "../components/FormInput/FormInput";
-import ButtonSubmit from "../components/ButtonSubmit/ButtonSubmit";
+import FormInput from "../FormInput/FormInput";
+import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
+import { SignInContainer, SignInDetailsContainer} from "./RegisterStyles";
 
 function Register() {
   // const [userDetails, setUserDetails] =useState({name:"", email:"", password:"", confirmPassword:""})
@@ -17,11 +18,11 @@ function Register() {
     setConfirmPassword("");
   }
   return (
-    <div className="sign-in">
-      <div className="sign-in-details">
+    <SignInContainer>
+      <SignInDetailsContainer>
         <h4>I don't have an account</h4>
         <span>SignUp with your email and password</span>
-      </div>
+      </SignInDetailsContainer>
       <form onSubmit={(event) => handleSubmitForm(event)}>
         <FormInput
           type="text"
@@ -55,7 +56,7 @@ function Register() {
           <ButtonSubmit type="submit">SignUp</ButtonSubmit>
         </div>
       </form>
-    </div>
+    </SignInContainer>
   );
 }
 

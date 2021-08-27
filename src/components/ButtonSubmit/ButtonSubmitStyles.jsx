@@ -16,7 +16,7 @@ export const ButtonSubmitContainer = styled.button`
   line-height: 50px;
   padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color: red;
+  background-color: blue;
   color: white;
   text-transform: uppercase;
   font-family: "Open Sans Condensed";
@@ -26,6 +26,7 @@ export const ButtonSubmitContainer = styled.button`
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  margin-right: 1rem;
   ${getButtonStyles}
   .link {
     text-decoration: none;
