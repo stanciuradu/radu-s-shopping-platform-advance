@@ -20,7 +20,7 @@ function StripeButton(props) {
         image="https://i.imgur.com/L6PvIUr.png"
         description={`Yout total is €${price}`}
         amount={priceForStripe}
-        panelLabel='Pay now' 
+        panelLabel="Pay now"
         token={onToken}
         stripeKey={publishableKey}
       />

@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import products from "../../utils/products.json";
 import MenuItem from "../../components/MenuItem/MenuItem";
-import "../../components/MenuList/MenuList.scss";
+import { DirectoryMenuContainer } from "../../components/MenuList/MenuListStyles";
 import { HomePageContainer } from "./HomePageStyles";
 
 export class HomePage extends Component {
@@ -32,7 +32,7 @@ export class HomePage extends Component {
     const { categories } = this.state;
     return (
       <HomePageContainer>
-        <div className="directory-menu">
+        <DirectoryMenuContainer>
           {/* datele despre categori se afla in state*/}
           {categories.map((category, index) => {
             return (
@@ -46,7 +46,7 @@ export class HomePage extends Component {
               />
             );
           })}
-        </div>
+        </DirectoryMenuContainer>
       </HomePageContainer>
     );
   }
