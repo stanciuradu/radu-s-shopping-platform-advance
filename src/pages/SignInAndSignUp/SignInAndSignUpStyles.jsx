@@ -6,5 +6,7 @@ export const SignInAndSignUpContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 15px;
+   justify-items: center;
+   align-items: center;
   }
 `;

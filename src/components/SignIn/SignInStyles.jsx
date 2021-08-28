@@ -15,4 +15,9 @@ export const SignInDetailsContainer = styled.div`
 
 export const ButtonSubmitStyles = styled.div`
   display: flex;
+  @media screen and (max-width:800px){
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
 `;
