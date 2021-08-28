@@ -22,9 +22,15 @@ export const CheckoutHeaderBlockContainer = styled.div`
   text-transform: capitalize;
   width: 23%;
   display: flex;
+  @media screen and (max-width:800px){
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    }
   &:last-child {
     width: 8%;
   }
+  
 `;
 
 export const Product = styled.div`
