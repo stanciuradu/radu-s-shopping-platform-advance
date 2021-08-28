@@ -1,4 +1,4 @@
-// componenta de Header este un a simpa de tip Function
+// componenta de Header este una simpla de tip Function
 import React from "react";
 import Logo from "../../assets/images/logo.png";
 import { auth } from "../../apis/firebase";

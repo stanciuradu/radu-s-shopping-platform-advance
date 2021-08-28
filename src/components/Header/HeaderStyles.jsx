@@ -15,6 +15,8 @@ export const HeaderContainer = styled.div`
         height: 60px;
         padding: 10px;
         margin-bottom: 20px;
+        flex-direction: column;
+        margin-bottom: 8rem;
     }
 `;
 // deaorece imaginea este un Link
@@ -37,6 +39,7 @@ export const OptionsContainer = styled.div`
   text-align: center;
   @media screen and (max-width:800px){
         width: 80%;
+        margin-top: 2rem;
     }
 `;
 export const OptionLink = styled(Link)`
