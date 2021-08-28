@@ -25,7 +25,7 @@ export const CheckoutHeaderBlockContainer = styled.div`
   @media screen and (max-width:800px){
     flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
+    margin-left: 3.5rem;
     }
   &:last-child {
     width: 8%;
@@ -57,4 +57,7 @@ export const TotalCost = styled.div`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
+  @media screen and (max-width:800px){
+    margin-right: 8rem;
+  }
 `;

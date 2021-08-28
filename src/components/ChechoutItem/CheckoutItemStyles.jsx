@@ -10,11 +10,17 @@ export const ChechoutItemContainer = styled.div`
   font-size: 20px;
   align-items: center;
   border-bottom: 1px solid grey;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const ImageContainer = styled.div`
   width: 23%;
   padding-right: 15px;
+  @media screen and (max-width: 800px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const Image = styled.img`
@@ -24,13 +30,20 @@ export const Image = styled.img`
 
 export const NameChechkoutItem = styled.div`
   width: 23%;
+  @media screen and (max-width: 800px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const PriceChechkoutItem = styled.div`
   width: 23%;
+  @media screen and (max-width: 800px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const RemoveButtonChechkoutItem = styled.div`
   padding-left: 12px;
   cursor: pointer;
+  margin-right: 5rem;
 `;
