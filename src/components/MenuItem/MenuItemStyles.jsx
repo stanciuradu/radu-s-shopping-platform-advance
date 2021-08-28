@@ -38,6 +38,9 @@ export const MenuItemContainer = styled.div`
     margin-left: 7.5px;
     // height: 20rem;
   }
+  @media screen and (max-width:800px){
+        height: 200px;
+    }
 `;
 
 export const BackgroundImageContainer = styled.div`

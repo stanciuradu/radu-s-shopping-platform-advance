@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import ProductList from "../../components/ProductList/ProductList";
 import products from "../../utils/products.json";
-// import "../Category/Category.scss";
 import { CategoryContainer, TitleCategoryPage } from "./CategoryStyles";
 
 export class Category extends Component {

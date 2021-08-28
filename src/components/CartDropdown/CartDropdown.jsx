@@ -1,6 +1,5 @@
 import React from "react";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
-// import "../../components/CartDropdown/CartDropdown.scss";
 import CartProduct from "../CartProduct/CartProduct";
 import { connect } from "react-redux";
 import {toggleCartHidden} from '../../redux/cart/cartActions';

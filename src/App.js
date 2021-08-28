@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import { GlobalStyle } from "./GlobalStyles/GlobalStyles";
 import HomePage from "./pages/HomePage/HomePage";
 import { Route, Switch } from "react-router-dom";
 import ShopPage from "./pages/ShopPage";
@@ -33,6 +33,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        {/* se aplica stilurile de fisirelul Style-components in intreaga aplicatie */}
+        <GlobalStyle />
         {/* pasam la componenta header ca props starea initiala a user-ului */}
         <Header availableUser={this.state.availableUser} />
         {/* componeneta Header se va alfa pe fiecare pagina a aplicatiei */}
