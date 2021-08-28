@@ -12,6 +12,8 @@ export const ChechoutItemContainer = styled.div`
   border-bottom: 1px solid grey;
   @media screen and (max-width: 800px) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -20,6 +22,7 @@ export const ImageContainer = styled.div`
   padding-right: 15px;
   @media screen and (max-width: 800px) {
     margin-bottom: 1rem;
+    width: 10rem;
   }
 `;
 

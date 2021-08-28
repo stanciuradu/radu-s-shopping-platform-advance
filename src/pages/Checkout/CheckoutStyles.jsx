@@ -25,7 +25,7 @@ export const CheckoutHeaderBlockContainer = styled.div`
   @media screen and (max-width:800px){
     flex-direction: column;
     justify-content: center;
-    margin-left: 3.5rem;
+    align-items: center;
     }
   &:last-child {
     width: 8%;
