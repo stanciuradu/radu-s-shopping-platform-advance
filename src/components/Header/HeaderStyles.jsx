@@ -17,6 +17,8 @@ export const HeaderContainer = styled.div`
         margin-bottom: 20px;
         flex-direction: column;
         margin-bottom: 8rem;
+        justify-content: center;
+        align-items: center;
     }
 `;
 // deaorece imaginea este un Link
@@ -28,6 +30,7 @@ export const LogoContainer = styled(Link)`
   @media screen and (max-width:800px){
         width: 20px;
         padding: 0px;
+        margin-top: 6rem;
     }
 `;
 export const OptionsContainer = styled.div`
