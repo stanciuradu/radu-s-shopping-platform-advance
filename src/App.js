@@ -44,6 +44,7 @@ class App extends React.Component {
         <Header availableUser={this.state.availableUser} />
         {/* componeneta Header se va alfa pe fiecare pagina a aplicatiei */}
         <Switch>
+          {/* Suspense primeste un props pentru incarcarea componentelor in aplicatie */}
           <Suspense fallback={<div>Loading...</div>}>
             <Route exact path="/" component={HomePage} />
             <Route path="/shop" component={ShopPage} />
