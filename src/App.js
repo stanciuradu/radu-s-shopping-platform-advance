@@ -1,14 +1,19 @@
-import React from "react";
+// importam lazy din React deoarece dorim sa importam componentele dinamic in aplicatie
+import React, { lazy, Suspense } from "react";
 import { GlobalStyle } from "./GlobalStyles/GlobalStyles";
-import HomePage from "./pages/HomePage/HomePage";
 import { Route, Switch } from "react-router-dom";
-import ShopPage from "./pages/ShopPage";
 import Header from "./components/Header/Header";
-import SignInAndSignUp from "./pages/SignInAndSignUp/SignInAndSignUp";
-import Page404 from "./pages/Page404/Page404";
-import Checkout from "./pages/Checkout/Checkout";
-import Category from "./pages/Category/Category";
 import { auth } from "./apis/firebase";
+
+//IMPORTAREA COMPONENTELOR IN  MOD DINAMIC PRIN React.lazy pentru a se mari performanta
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const ShopPage = lazy(() => import("./pages/ShopPage"));
+const SignInAndSignUp = lazy(() =>
+  import("./pages/SignInAndSignUp/SignInAndSignUp")
+);
+const Checkout = lazy(() => import("./pages/Checkout/Checkout"));
+const Category = lazy(() => import("./pages/Category/Category"));
+const Page404 = lazy(() => import("./pages/Page404/Page404"));
 
 class App extends React.Component {
   constructor() {
@@ -39,11 +44,13 @@ class App extends React.Component {
         <Header availableUser={this.state.availableUser} />
         {/* componeneta Header se va alfa pe fiecare pagina a aplicatiei */}
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route path="/sign_in" component={SignInAndSignUp} />
-          <Route path="/checkout" component={Checkout} />
-          <Route path="/category/:categoryName" component={Category} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/shop" component={ShopPage} />
+            <Route path="/sign_in" component={SignInAndSignUp} />
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/category/:categoryName" component={Category} />
+          </Suspense>
           <Route path="*" component={Page404} />
         </Switch>
       </div>
